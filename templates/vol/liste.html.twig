@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><title>Liste des vols</title></head>
+<body>
+
+<h1>Liste des vols</h1>
+
+{% for vol in vols %}
+    <p>
+        {{ vol.destination }} -
+        {{ vol.heureDepart|date('H:i') }} ➝ {{ vol.heureArrivee|date('H:i') }}
+        - {{ vol.prix }} €
+    </p>
+{% else %}
+    <p>Aucun vol disponible.</p>
+{% endfor %}
+
+</body>
+</html>
